@@ -44,7 +44,7 @@
     border-radius: 5px;
   }
   input:focus{
-    border-color: chartreuse;
+    border-color: cadetblue;
   }
   h1
   {
@@ -104,19 +104,21 @@
 		let buy = document.getElementById("buy");
 		let order = document.getElementById("order");
 
-		buy.addEventListener("click", ()=> {
-			document.getElementById("main").style.display = "none"
-			document.getElementById("form").style.display = "block"
+		// buy.addEventListener("click", ()=> {
+		// 	document.getElementById("main").style.display = "none"
+		// 	document.getElementById("form").style.display = "block"
 
-		});
+		// });
      // Show main button
      Telegram.WebApp.MainButton.setParams({
             text: 'Main Button'
         });
         Telegram.WebApp.MainButton.onClick(function () {
-            Telegram.WebApp.showAlert('Main Button was clicked')
+          document.getElementById("main").style.display = "none"
+          document.getElementById("form").style.display = "block"
+
         });	
-        Telegram.WebApp.MainButton.show();
+        // Telegram.WebApp.MainButton.show();
     
 
 	</script>
