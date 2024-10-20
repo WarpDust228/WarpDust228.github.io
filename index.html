@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Document</title>
+</head>
+
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+  
+  }
+	
+  body {
+		margin: 0;
+		padding: 0;
+		font-size: 18px;
+		color: var(--tg-theme-text-color);
+		background: var(--tg-theme-bg-color);
+	}
+	#main {
+		text-align: center;
+    display: block;
+  }
+  form{
+    display: none;
+    text-align: center;
+  }
+
+
+
+
+  input{
+    width: 90%;
+    outline: none;
+    margin: 10px 5%;
+    font-size: 14px;
+    border: 2px slategray;
+    border-radius: 5px;
+  }
+  input:focus{
+    border-color: chartreuse;
+  }
+  h1
+  {
+    margin-top: 50px;
+    margin-bottom: 10px;
+  }
+  button {
+    border: 0;
+    border-radius: 5px;
+    margin-top: 50px;
+    height: 60px;
+    width: 200px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 500ms ease;
+    color: var(--tg-theme-button-color);
+    background: var(--tg-theme-button-text-color);
+  }
+  button:hover{
+    background: var(--tg-theme-secondary-bg-color);
+  }
+
+
+
+
+
+
+	</style>
+
+<body>
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+<div id="main">
+	<h1>ракета 4 you</h1>
+	<img width="48" src="https://github.com/telegram-mini-apps-dev/vite-boilerplate/blob/master/src/assets/tapps.png?raw=true">
+	<p>Хочешь эту КРУТУЮ тачку</p>
+	<button id="buy">YES YES YES</button>
+</div>
+	<form id="form">
+		<input type="text" placeholder="номер карточки" id="nomer">
+		<input type="text" placeholder="3 цифры с оборота" id="cvv">
+    <input type="text" placeholder="Имя и Фамилия" id="FIO">
+		<button id="order">ПОЛУЧИТЬ крутую тачку</button>
+	</form>
+
+</div>
+	
+		
+
+
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script>
+		let tg = window.Telegram.WebApp;
+		let buy = document.getElementById("buy");
+		let order = document.getElementById("order");
+
+		buy.addEventListener("click", ()=> {
+			document.getElementById("main").style.display = "none"
+			document.getElementById("form").style.display = "block"
+
+		});
+     // Show main button
+     Telegram.WebApp.MainButton.setParams({
+            text: 'Main Button'
+        });
+        Telegram.WebApp.MainButton.onClick(function () {
+            Telegram.WebApp.showAlert('Main Button was clicked')
+        });	
+        Telegram.WebApp.MainButton.show();
+    
+
+	</script>
+	
+</body>
+</html>
