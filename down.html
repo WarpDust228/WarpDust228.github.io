@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">    
+  <!-- TG-->
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script>
+		let tg = window.Telegram.WebApp;
+		let buy = document.getElementById("buy");
+		let order = document.getElementById("order");
+
+
+
+        fetch('')
+   // check to make sure you didn't have an unexpected failure (may need to check other things here depending on use case / backend)
+  .then(resp => resp.status === 200 ? resp.blob() : Promise.reject('something went wrong'))
+  .then(blob => {
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = url;
+    // the filename you want
+    a.download = 'k.png';
+    document.body.appendChild(a);
+    a.click();
+    window.URL.revokeObjectURL(url);
+    // or you know, something with better UX...
+    alert('your file has downloaded!'); 
+  })
+  .catch(() => alert('oh no!'));
+
+	</script> 
+  </body>
+</html>	
