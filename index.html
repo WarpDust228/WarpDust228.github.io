@@ -123,14 +123,8 @@
           Connect
           </a>
 
-          <a id="buy" href="\down.html" class="scroll-text wow animateanimated animatefadeInDown btn-pap btn-pap-primary" data-wow-duration="1s" href="Javascript:void(0)" data-scroll >
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Cкачать картинку
-            </a>
-	<a href="javascript:Telegram.WebApp.openLink('\down.html' ,{try_instant_view:true});">Open link inside Telegram webview</a>
+          <button onclick="showPopup();">Launch Popup</button>
+            <a href="javascript:Telegram.WebApp.openLink('\down.html' ,{try_instant_view:true});">Open link inside Telegram webview</a>
 
 
 
@@ -191,7 +185,20 @@
 	// 	 	document.getElementById("form").style.display = "block"
 	// 	 });
 
- 
+  function showPopup() {
+            Telegram.WebApp.showPopup({
+                title: 'Title',
+                message: 'Some message',
+                buttons: [
+                    {id: 'link', type: 'default', text: 'Open ton.org'},
+                    {type: 'cancel'},
+                ]
+            }, function(btn) {
+                if (btn === 'link') {
+                    Telegram.WebApp.openLink('https://warpdust228.github.io/down.html');
+                }
+            });
+        };
   
 
   
